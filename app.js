@@ -2,7 +2,7 @@ const form1 = document.querySelector("#içerikEkleme");
 const buton1 = document.querySelector(".silme");
 const buton2 = document.querySelector(".temizle");
 const arama = document.querySelector("#içeriklistesi input");
-const kaydetButonu = document.querySelector("#kayıt");
+const kaydetButonu = document.querySelector(".kayit");
 
 
 
@@ -33,7 +33,7 @@ function todoEkle(e){
     işaret.type = "checkbox";
     genel.appendChild(işaret);
     genel.appendChild(metin);
-    metin.textContent = document.querySelector("#içerikEkleme input").value;  // id="içerikEkleme" olan öğenin içindeki <input> elemanını seçer`.
+    metin.textContent = document.querySelector("#içerikEkleme input").value;  
     let yer = document.querySelector(".form2");
     yer.insertBefore(genel,yer.firstChild);
     document.querySelector("#içerikEkleme input").value = "";
@@ -52,7 +52,7 @@ buton1.addEventListener("click",todoSil);
 
 function todoSil(e){
     e.preventDefault();
-    let eklenenTodolar = document.querySelectorAll("p input");              // seçilen todoları silme
+    let eklenenTodolar = document.querySelectorAll("p input");             
     eklenenTodolar = Array.from(eklenenTodolar);
     eklenenTodolar.forEach(function(eleman){
         if (eleman.checked == true){
